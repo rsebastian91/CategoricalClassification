@@ -27,7 +27,7 @@ Y=Y.reshape((len(Y),))
 x_train, x_valid, y_train, y_valid = train_test_split(X,Y, test_size=0.33, random_state=1)
 
 
-MLobj=ML.Categorical(x_train,y_train,x_valid,y_valid)
+MLobj=ML.Classification(x_train,y_train,x_valid,y_valid)
 
 # Explore data
 MLobj.check_data()

@@ -13,24 +13,10 @@ from tensorflow.keras.datasets import mnist
 # Split between train and validation sets
 (x_train, y_train), (x_valid, y_valid) = mnist.load_data()
 
-MLobj=ML.Categorical(x_train,y_train,x_valid,y_valid)
+MLobj=ML.Classification(x_train,y_train,x_valid,y_valid)
 
 # Explore data
 MLobj.check_data()
-
-
-#import matplotlib.pyplot as plt
-#plt.close("all")
-#
-#nbrow=2
-#nbcol=5
-#
-#fig, axs = plt.subplots(nbrow, nbcol, figsize=(10,5))
-#for i in range(0,nbrow):
-#    for j in range(0,nbcol):
-#        axs[i,j].imshow(self.x_train[i*nbcol+j], cmap='gray')
-#        axs[i,j].set_title("Sample No."+str(i*nbcol+j))
-#fig.suptitle("Sample training data")        
 
 
 #Data preparation for training

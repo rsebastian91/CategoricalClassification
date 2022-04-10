@@ -4,7 +4,7 @@
 @author: robin
 """
 
-class Categorical():
+class Classification():
     def __init__(self,x_train,y_train,x_valid,y_valid):
         self.x_train=x_train
         self.y_train=y_train 

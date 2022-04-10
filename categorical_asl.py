@@ -23,25 +23,10 @@ x_train = train_df.values
 x_valid = valid_df.values
 
 
-MLobj=ML.Categorical(x_train,y_train,x_valid,y_valid)
+MLobj=ML.Classification(x_train,y_train,x_valid,y_valid)
 
 # Explore data
 MLobj.check_data()
-
-
-#import matplotlib.pyplot as plt
-#plt.figure(figsize=(40,40))
-#
-#num_images = 20
-#for i in range(num_images):
-#    row = x_train[i]
-#    label = y_train[i]
-#    
-#    image = row.reshape(28,28)
-#    plt.subplot(1, num_images, i+1)
-#    plt.title(label, fontdict={'fontsize': 30})
-#    plt.axis('off')
-#    plt.imshow(image, cmap='gray')    
 
 
 #Data preparation for training
@@ -84,7 +69,7 @@ model.summary()
 model.compile(loss='categorical_crossentropy', metrics=['accuracy'])
 
 #Training model
-nb_epochs=10
+nb_epochs=20
 history = model.fit(
     x_train, y_train, epochs=nb_epochs, verbose=1, validation_data=(x_valid, y_valid)
 )
